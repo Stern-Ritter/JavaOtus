@@ -6,7 +6,7 @@ plugins {
 
 idea {
     project {
-        languageLevel = 11
+        languageLevel = 15
     }
     module {
         downloadJavadoc = true
@@ -24,6 +24,9 @@ allprojects {
     apply plugin: "io.spring.dependency-management"
     dependencyManagement {
         dependencies {
+            imports {
+                mavenBom("org.springframework.boot:spring-boot-dependencies:2.3.1.RELEASE")
+            }
             dependency("com.google.guava:guava:${Versions.guava}")
         }
     }
